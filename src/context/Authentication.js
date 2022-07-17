@@ -1,9 +1,15 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const AuthenticationContext = createContext()
 
 export function AuthenticationProvider({ children }) {
+    const navigate = useNavigate()
     const [accessToken, setAccessToken] = useState(null)
+    const updateAccessToken = (val) => {
+        if (!val) window.localStorage.removeItem('access_token')
+        setAccessToken(val)
+    }
 
     useEffect(() => {
         const hash = window.location.hash
@@ -16,15 +22,15 @@ export function AuthenticationProvider({ children }) {
                 .find((elem) => elem.startsWith('access_token'))
                 .split('=')[1]
 
-            window.location.hash = ''
             window.localStorage.setItem('access_token', token)
+            navigate('/profile')
         }
 
-        setAccessToken(token)
+        updateAccessToken(token)
     }, [])
 
     return (
-        <AuthenticationContext.Provider value={{ accessToken, setAccessToken }}>
+        <AuthenticationContext.Provider value={{ accessToken, updateAccessToken }}>
             {children}
         </AuthenticationContext.Provider>
     )
