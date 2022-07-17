@@ -13,7 +13,7 @@ import { ThemeContext } from '../context/Theme'
 import FormSwitch from '../components/form/FormSwitch'
 
 export default function Navbar() {
-    const { accessToken, updateAccessToken } = useContext(AuthenticationContext)
+    const { accessToken, setAccessToken } = useContext(AuthenticationContext)
     const { darkMode, toggleDarkMode } = useContext(ThemeContext)
     const [toggleNavbar, setToggleNavbar] = useState(false)
 
@@ -85,7 +85,7 @@ export default function Navbar() {
                                     </span>
                                 </Link>
                                 <li
-                                    onClick={() => updateAccessToken(null)}
+                                    onClick={() => setAccessToken(null)}
                                     className="flex items-center"
                                 >
                                     <Icon
