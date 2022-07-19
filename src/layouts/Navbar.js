@@ -114,6 +114,8 @@ export default function Navbar() {
                     </ul>
                 </div>
             </div>
+
+            {toggleNavbar && <hr className="block md:hidden" />}
         </nav>
     )
 }
