@@ -14,7 +14,7 @@ export default function App() {
     const { darkMode } = useContext(ThemeContext)
 
     return (
-        <div className={`h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+        <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
             <Navbar />
             <PageContainer>
                 <Routes>
