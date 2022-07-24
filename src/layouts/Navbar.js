@@ -26,7 +26,7 @@ export default function Navbar() {
                         className="mr-3 h-6 sm:h-9"
                         alt="Music Notes"
                     />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap">
+                    <span className="self-center md:text-lg lg:text-xl font-semibold whitespace-nowrap">
                         Spotify Benedictio
                     </span>
                 </Link>
