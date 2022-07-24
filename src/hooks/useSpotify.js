@@ -11,35 +11,37 @@ export default function useSpotify(endpoint) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        setLoading(true)
-        setData(null)
-        setError(null)
+        if (endpoint) {
+            setLoading(true)
+            setData(null)
+            setError(null)
 
-        axios({
-            url: base + endpoint,
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-            },
-        })
-            .then((response) => {
-                setLoading(false)
-                setData(response.data)
+            axios({
+                url: base + endpoint,
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
             })
-            .catch((error) => {
-                console.log(error)
-                if (error.response.status === 401) {
-                    setAccessToken(null)
-                } else {
-                    console.log(error)
+                .then((response) => {
                     setLoading(false)
-                    setError({
-                        code: error.response.status,
-                        message: error.message,
-                    })
-                }
-            })
-    }, [])
+                    setData(response.data)
+                })
+                .catch((error) => {
+                    console.log(error)
+                    if (error.response.status === 401) {
+                        setAccessToken(null)
+                    } else {
+                        console.log(error)
+                        setLoading(false)
+                        setError({
+                            code: error.response.status,
+                            message: error.message,
+                        })
+                    }
+                })
+        }
+    }, [endpoint])
 
     return { data, loading, error }
 }
