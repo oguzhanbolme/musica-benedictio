@@ -7,7 +7,7 @@ export default function Spinner() {
 
     return (
         <div
-            className={`lds-hourglass lds-${darkMode ? 'dark' : 'light'}-theme`}
+            className={`lds-hourglass ${darkMode ? 'lds-dark-theme' : 'lds-light-theme'}`}
         ></div>
     )
 }
