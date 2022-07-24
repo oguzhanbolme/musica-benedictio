@@ -1,9 +1,8 @@
 import React from 'react'
 import useSpotify from '../../hooks/useSpotify'
 import Suspense from '../../components/Suspense'
+import List from './List'
 import Me from './Me'
-import TopArtists from './TopArtists'
-import TopTracks from './TopTracks'
 
 export default function Profile() {
     const { data: profile, loading: profileLoading, error: profileError } = useSpotify('/v1/me')
@@ -21,13 +20,13 @@ export default function Profile() {
 
             <div className="order-3">
                 <Suspense isLoading={artistsLoading} error={artistsError}>
-                    <TopArtists artists={artists} />
+                    <List type="artist" data={artists} title="Top Artists" />
                 </Suspense>
             </div>
 
             <div className="order-2 md:order-1">
                 <Suspense isLoading={tracksLoading} error={tracksError}>
-                    <TopTracks tracks={tracks} />
+                    <List type="track" data={tracks} title="Top Tracks" />
                 </Suspense>
             </div>
         </div>
