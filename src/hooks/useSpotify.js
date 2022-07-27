@@ -11,7 +11,7 @@ export default function useSpotify(endpoint) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        if (endpoint) {
+        if (endpoint && accessToken) {
             setLoading(true)
             setData(null)
             setError(null)
@@ -39,7 +39,7 @@ export default function useSpotify(endpoint) {
                     }
                 })
         }
-    }, [endpoint])
+    }, [endpoint, accessToken])
 
     return { data, loading, error }
 }
