@@ -3,7 +3,11 @@ import Spinner from './ui/Spinner'
 
 export default function Suspense({ children, isLoading, error }) {
     if (isLoading) {
-        return <Spinner />
+        return (
+            <div className="min-h-screen flex items-center">
+                <Spinner />
+            </div>
+        )
     }
 
     if (error) {
