@@ -28,11 +28,9 @@ export default function useSpotify(endpoint) {
                     setData(response.data)
                 })
                 .catch((error) => {
-                    console.log(error)
                     if (error.response.status === 401) {
                         setAccessToken(null)
                     } else {
-                        console.log(error)
                         setLoading(false)
                         setError({
                             code: error.response.status,
