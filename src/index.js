@@ -6,13 +6,16 @@ import reportWebVitals from './reportWebVitals'
 import './assets/global.css'
 import { AuthenticationProvider } from './context/Authentication'
 import { ThemeProvider } from './context/Theme'
+import { ProfileProvider } from './pages/Profile/Context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <BrowserRouter>
         <AuthenticationProvider>
             <ThemeProvider>
-                <App />
+                <ProfileProvider>
+                    <App />
+                </ProfileProvider>
             </ThemeProvider>
         </AuthenticationProvider>
     </BrowserRouter>
