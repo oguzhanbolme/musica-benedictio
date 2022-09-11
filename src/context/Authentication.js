@@ -6,7 +6,7 @@ export const AuthenticationContext = createContext()
 
 export function AuthenticationProvider({ children }) {
     const navigate = useNavigate()
-    const [accessToken, setAccessToken] = useLocalStorage('access_token', null)
+    const [accessToken, setAccessToken] = useLocalStorage('spotify_benedictio_access_token', null)
 
     useEffect(() => {
         const hash = window.location.hash
