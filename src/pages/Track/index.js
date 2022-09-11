@@ -45,7 +45,7 @@ export default function Track() {
         <div className="lg:columns-2">
             <div className="lg:min-h-screen flex flex-col items-center justify-center gap-5 lg:my-0 my-10">
                 {selectedTrack && (
-                    <div className="flex items-center gap-5">
+                    <div className="flex items-center cursor-pointer gap-5" onClick={() => window.open(selectedTrack.external_urls.spotify, '_blank')}>
                         {selectedTrack.album.images[0]?.url && (
                             <img
                                 className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border"
