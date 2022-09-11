@@ -4,7 +4,7 @@ import useLocalStorage from '../hooks/useLocalStorage'
 export const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-    const [darkMode, setDarkMode] = useLocalStorage('darkMode', true)
+    const [darkMode, setDarkMode] = useLocalStorage('darkMode', false)
     const toggleDarkMode = () => setDarkMode(!darkMode)
 
     return (
