@@ -1,10 +1,12 @@
 # Spotify Benedictio
 
 - Spotify API
-- Context
+- Context (Authentication, Theme)
 - Custom Hooks (useLocalStorage, useSpotify)
 - Tailwind CSS
 - Hosting (AWS S3)
+- Debounce Technique
+- Advanced Folder Structure
 
 
 ## Login
