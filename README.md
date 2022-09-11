@@ -1,4 +1,8 @@
-# Spotify Benedictio
+# Musica Benedictio
+
+Just a hobby project.
+
+<br>
 
 - Spotify API
 - Context (Authentication, Theme)
