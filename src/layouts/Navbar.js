@@ -27,7 +27,7 @@ export default function Navbar() {
                         alt="Music Notes"
                     />
                     <span className="self-center md:text-lg lg:text-xl font-semibold whitespace-nowrap">
-                        Spotify Benedictio
+                        Musica Benedictio
                     </span>
                 </Link>
 
