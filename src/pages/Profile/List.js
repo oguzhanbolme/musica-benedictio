@@ -17,7 +17,8 @@ export default function List({ data, title, type }) {
                 {data?.items.map((item, index) => (
                     <li
                         key={item.id}
-                        className={`flex items-center py-2 px-4 w-full rounded-t-lg border-b ${darkMode ? 'border-gray-600' : 'border-gray-300'} gap-2`}
+                        onClick={() => window.open(item.external_urls.spotify, '_blank')}
+                        className={`cursor-pointer flex items-center py-2 px-4 w-full rounded-t-lg border-b ${darkMode ? 'border-gray-600' : 'border-gray-300'} gap-2`}
                     >
                         <span className="text-lg">#{index + 1}</span>
                         <img
